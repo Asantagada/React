@@ -7,14 +7,39 @@
     transform: rotate(360deg);
   }
 } */
-
+*{
+  margin:0;
+  padding:0;
+}
+.Header{
+  display: grid;
+  grid-template-areas: "Logo Titulo" "Logo NavBar" ;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 60% 40%;
+  align-items: center;
+  background-color: rgb(7, 7, 7);
+}
 .Titulo{
+  grid-area: Titulo;
   text-align: center;
   font-size: 5rem;
+  color:red;
 }
-.NavBar{
+.navbar{
+  grid-area: NavBar;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   list-style: none;
+  font-size: 1.7rem;
+  background-color: rgb(202, 202, 30);
+}
+.ItemNavBar{
+  color: red;
+}
+.Logo{
+  grid-area:Logo;
+  width:300px;
+  height: 300px;
+  margin: auto;
 }
