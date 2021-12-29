@@ -1,12 +1,13 @@
 import React from "react";
-import CartWidget from "../NavBar/CartWidget";
+import ItemCount from "../ItemCount/ItemCount";
 
 const ItemListContainer =(props)=>{
-    const{greeting}= props
+    const{greeting}= props;
+
     return (
         <div>
             <h1>{greeting}</h1>
-            <CartWidget></CartWidget>
+            <ItemCount stock="6" initial="1" />
         </div>
     )
 }
