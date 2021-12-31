@@ -25,7 +25,7 @@ function ItemCount({initial, stock}) {
         <div>
             <button onClick={substractCount}>-</button>
             {count}
-            <button onClick ={addCount}>+</button>
+            <button onClick ={addCount(stock)}>+</button>
             <br/>
             <button onClick={onAdd}>Agregar Al Carrito</button>
         </div>
@@ -33,3 +33,4 @@ function ItemCount({initial, stock}) {
 }
 
 export default ItemCount
+
