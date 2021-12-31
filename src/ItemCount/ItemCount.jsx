@@ -1,36 +1,33 @@
 import React from 'react'
 import { useState } from 'react';
-import {useEffect} from 'react'
 
-function ItemCount({stock, initial}) {
-    const [count, setCount] = useState(initial);  
-    const addCount=()=>{
-        setCount(parseInt(count) + 1)
+function ItemCount({initial, stock}) {
+    const [count, setCount] = useState(initial);
+
+    const addCount=(stock)=>{
+        if(count<=stock){
+            setCount(parseInt(count)+1)
+        }else{
+            console.log("No contamos con esa cantidad")
+        }
     }
     const substractCount=()=>{
-        setCount(count-1)
-    }
-
-    
-    let onAdd=()=>{}
-    
-    useEffect(()=>{
-        onAdd=(stock,count)=>{
-            if(count<=stock){
-                console.log('Elegiste '+ count + " productos")
-            }
-            else{
-                console.log("No tenemos esa cantidad")
-            }
+        if(count<initial){
+            setCount(count-1)
+        }else{
+            console.log("No hay menos")
         }
-    })
+    }    
+    const onAdd=()=>{
+        console.log(`Se agregaron ${count} items al carrito`)
+    } 
     return (
         <div>
             <button onClick={substractCount}>-</button>
             {count}
             <button onClick ={addCount}>+</button>
             <br/>
-            <button onClick={onAdd(stock,count)}>Agregar Al Carrito</button>
+            <button onClick={onAdd}>Agregar Al Carrito</button>
         </div>
     )
 }
