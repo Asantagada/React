@@ -1,13 +1,23 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import {bringBoards} from "../ItemList/products";
 import ItemList from "../ItemList/ItemList";
-// import ItemCount from "../ItemCount/ItemCount";
 
-const ItemListContainer =(props)=>{
-    const greeting= "Bienvenido a mi tienda"
+const ItemListContainer =({saludo})=>{
+    const [data, setData]=useState([]);
+    useEffect(() => {
+        bringBoards
+        .then((response)=>{
+            setData(response)
+        })
+        .catch((error)=>{
+            console.log(error)
+        })    
+    },[])
+
     return (
         <div>
-            <h1>{greeting}</h1>
-            <ItemList></ItemList>
+            <h1>{saludo}</h1>
+            <ItemList productos={data}/>
         </div>
     )
 }

@@ -1,18 +1,15 @@
-import React from 'react'
-import { getFetch } from "../ItemList/Item";
-import { useState } from "react";
+import React from 'react';
+import Item from '../ItemList/Item';
 
+const ItemList = ({productos}) => {
 
-function ItemList() {
-    const [tablas, settablas]=useState([]);
-    getFetch
-    .then(resp=>settablas(resp))
-    .catch(err=>console.log(err))
-    return (
+    return (        
         <div>
-            {tablas.map(tabla=><li key={tabla.id}>{tabla.nombre} Precio:{tabla.precio}</li>)}
+            {productos.map((producto)=>{
+                <Item key={producto.id} producto= {producto}/>
+            })}
         </div>
-    )
-}
+    );
+};
 
 export default ItemList
