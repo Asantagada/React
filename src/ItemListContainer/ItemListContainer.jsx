@@ -8,19 +8,17 @@ const ItemListContainer =({saludo})=>{
     const {idCategoria}= useParams()
 
     useEffect(() => {
-        console.log(idCategoria)
-
-        if (idCategoria) {
+        if (idCategoria) {            
             bringBoards
-            .then(response=> setData(response.filter(prod=>prod.categoria=== idCategoria)))
+            .then(response=> setData(response.filter(prod=>prod.categoria === idCategoria)))
             .catch(error=>console.log(error))
-
         }else {
             bringBoards
             .then(response=>setData(response))
             .catch(error=>console.log(error))
         }    
     } ,[idCategoria])
+
     return (
         <div>
             <h1>{saludo}</h1>

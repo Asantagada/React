@@ -13,9 +13,9 @@ function NavBarBs(){
                     <Nav className="me-auto">
                         <Link className="ItemNavBar" to={`/`}>Inicio</Link>
                         <Link className="ItemNavBar" to={`/categoria/skates`}>Skates</Link>
-                        <Link className="ItemNavBar" to={`/categoria/longboards`}>Longboards</Link>
-                        <Link className="ItemNavBar" to={`/categoria/surfSkates`}>Surf Skates</Link>
-                        <Link className="ItemNavBar" to={`/categoria/cruisers`}>Cruisers</Link>
+                        <Link className="ItemNavBar" to={`/categoria/longboard`}>Longboards</Link>
+                        <Link className="ItemNavBar" to={`/categoria/surfSkate`}>Surf Skates</Link>
+                        <Link className="ItemNavBar" to={`/categoria/cruiser`}>Cruisers</Link>
                         <Link className="ItemNavBar" to={`/categoria/cart`}>{<CartWidget></CartWidget>}</Link>                        
                     </Nav>
                 </Navbar.Collapse>
