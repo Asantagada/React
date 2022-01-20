@@ -2,6 +2,7 @@ import React from "react";
 import Container from 'react-bootstrap/Container';
 import {Nav, Navbar} from 'react-bootstrap';
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 
 function NavBarBs(){
     return(
@@ -10,13 +11,12 @@ function NavBarBs(){
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link className="ItemNavBar" href=" ">Inicio</Nav.Link>
-                        <Nav.Link className="ItemNavBar"  href=" ">Skates</Nav.Link>
-                        <Nav.Link className="ItemNavBar" href=" ">Longboards</Nav.Link>
-                        <Nav.Link className="ItemNavBar" href=" ">Surf Skates</Nav.Link>
-                        <Nav.Link className="ItemNavBar" href=" ">Cruisers</Nav.Link>
-                        <Nav.Link className="ItemNavBar" href=" ">{<CartWidget></CartWidget>}</Nav.Link>
-                        
+                        <Link className="ItemNavBar" to={`/`}>Inicio</Link>
+                        <Link className="ItemNavBar" to={`/categoria/skates`}>Skates</Link>
+                        <Link className="ItemNavBar" to={`/categoria/longboards`}>Longboards</Link>
+                        <Link className="ItemNavBar" to={`/categoria/surfSkates`}>Surf Skates</Link>
+                        <Link className="ItemNavBar" to={`/categoria/cruisers`}>Cruisers</Link>
+                        <Link className="ItemNavBar" to={`/categoria/cart`}>{<CartWidget></CartWidget>}</Link>                        
                     </Nav>
                 </Navbar.Collapse>
             </Container>

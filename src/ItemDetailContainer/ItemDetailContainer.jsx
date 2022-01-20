@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 const ItemDetailContainer = () => {
     const [producto, setProducto] = useState({})
     const {idDetalle}= useParams()
+    console.log(idDetalle)
     useEffect(() => {
         bringBoards
         .then(response => setProducto(response.find(prod => prod.id === idDetalle)))
