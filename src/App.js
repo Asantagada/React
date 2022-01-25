@@ -5,18 +5,21 @@ import ItemListContainer from './ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './ItemDetailContainer/ItemDetailContainer';
 import {BrowserRouter, Route, Routes} from "react-router-dom"
 import Cart from './Cart/Cart';
+import { CartContextProvider } from './Cart/CartContext/cartContext';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Header/>
-      <Routes>
-        <Route exact path='/' element={<ItemListContainer greeting ="Bienvenido a mi tienda"/>}/>
-        <Route exact path='/categoria/:idCategoria' element={<ItemListContainer greeting ="Bienvenido a mi tienda"/>}/>
-        <Route exact path='/detalle/:idDetalle' element={<ItemDetailContainer/>}/>
-        <Route exact path='/cart' element={<Cart/>}/>
-      </Routes>
-    </BrowserRouter>
+    <CartContextProvider>
+      <BrowserRouter>
+        <Header/>
+          <Routes>
+            <Route exact path='/' element={<ItemListContainer greeting ="Bienvenido a mi tienda"/>}/>
+            <Route exact path='/categoria/:idCategoria' element={<ItemListContainer greeting ="Bienvenido a mi tienda"/>}/>
+            <Route exact path='/detalle/:idDetalle' element={<ItemDetailContainer/>}/>
+            <Route exact path='/cart' element={<Cart/>}/>
+          </Routes>
+      </BrowserRouter>
+    </CartContextProvider>
     );
 }
 
